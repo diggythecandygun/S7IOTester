@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:S7IOTester.ViewModels"
+             x:Class="S7IOTester.Views.IOs"
+             BackgroundColor="silver">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:IOsViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+        
+        <StackLayout VerticalOptions="Start" >
+
+            <Grid
+                Margin="0,30,0,0"
+                ColumnDefinitions="2"
+                RowDefinitions="3">
+                
+                <!--CPU Settings-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Selected CPU Family:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                />
+                <Label 
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Text="{Binding CPUType}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+                
+                <!--IP Settings-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    HorizontalOptions="Start"
+                    Text="IP Address:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                />
+                <Label 
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Text="{Binding IPAddress}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+                
+                <!--Connection Status-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    HorizontalOptions="Start"
+                    Text="Status"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                />
+                <Label 
+                    Grid.Column="2"
+                    Grid.Row="3"
+                    Text="{Binding Status}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
+            </Grid>
+
+            <!--Connection Button-->
+            <Button 
+                    Text="{Binding ConnectButton}"
+                    Command="{Binding Connect}"
+                    IsEnabled="{Binding CanConnect}"/>
+
+            <!--Connection Button-->
+            <Button 
+                    Text="Update Settings"
+                    Command="{Binding Update}"
+                />
+
+
+
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

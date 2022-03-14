@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:S7IOTester.ViewModels"
+             x:Class="S7IOTester.Views.Settings"
+             Title="Settings"
+             BackgroundColor="silver">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content >
+        
+        <StackLayout VerticalOptions="Center" >
+            
+            <StackLayout>
+                <Label 
+                    Text="CPU Family"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
+                <Picker 
+                    Title="Select CPU Family"
+                    ItemsSource="{Binding CPUFamily}"
+                    SelectedItem="{Binding CPUType}"
+                    BackgroundColor="white" 
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
+            </StackLayout>
+            
+            <StackLayout>
+                <Label 
+                    Text="IP Address"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
+                <Entry 
+                    Placeholder="Set device IP Address"
+                    Text="{Binding IPAddress, Mode=TwoWay}"                  
+                    BackgroundColor="white" 
+                    TextColor="Black" 
+                    HorizontalOptions="CenterAndExpand"
+                    
+                />
+
+                <Button 
+                    Text="Save"
+                    Command="{Binding SaveSettings}"
+                    HorizontalOptions="Center"
+                />
+            </StackLayout>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
