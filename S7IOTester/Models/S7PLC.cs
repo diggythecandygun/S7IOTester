@@ -117,6 +117,23 @@ namespace S7IOTester.Models
 
         }
 
+        public byte[] ReadByte(string byteoffsetstr)
+        {
+            byte[] ByteRead = new byte[] { };
+
+            try
+            {
+                int byteoffset = Int16.Parse(byteoffsetstr);
+                ByteRead = plc.ReadBytes(DataType.Input, 0, byteoffset, 1);
+                return ByteRead;
+            }
+            catch
+            {
+                return ByteRead;
+            }
+
+            
+        }
 
     }
 }

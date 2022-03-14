@@ -16,7 +16,7 @@
             <Grid
                 Margin="0,30,0,0"
                 ColumnDefinitions="2"
-                RowDefinitions="3">
+                RowDefinitions="4">
                 
                 <!--CPU Settings-->
                 <Label 
@@ -78,6 +78,28 @@
                     HorizontalOptions="Center"
                 />
 
+                <!--Byte Address-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    HorizontalOptions="Start"
+                    Text="Byte Address"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                />
+                <Entry 
+                    Grid.Column="2"
+                    Grid.Row="4"
+                    Placeholder="Byte Address"
+                    PlaceholderColor="black"
+                    Text="{Binding ByteAddress, Mode=TwoWay}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
             </Grid>
 
             <!--Connection Button-->
@@ -91,6 +113,368 @@
                     Text="Update Settings"
                     Command="{Binding Update}"
                 />
+
+            <!--Bits-->
+            <Grid
+                ColumnDefinitions="2"
+                RowDefinitions="8">
+
+
+                <Label
+                    Text="%X0:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="1"   />
+
+                <Label
+                    Text="%X1:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="2"   />
+
+                <Label
+                    Text="%X2:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="3"   />
+                <Label
+                    Text="%X3:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="4"   />
+                <Label
+                    Text="%X4:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="5"   />
+                <Label
+                    Text="%X5:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="6"   />
+                <Label
+                    Text="%X6:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="7"   />
+                <Label
+                    Text="%X7:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="8"   />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="3"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="4"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="5"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="6"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="7"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="8"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                
+                <Label
+                    Text="%X0:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="1"   />
+
+                <Label
+                    Text="%X1:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="2"   />
+
+                <Label
+                    Text="%X2:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="3"   />
+                <Label
+                    Text="%X3:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="4"   />
+                <Label
+                    Text="%X4:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="5"   />
+                <Label
+                    Text="%X5:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="6"   />
+                <Label
+                    Text="%X6:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="7"   />
+                <Label
+                    Text="%X7:"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="8"   />
+
+                <!--Disabled-->
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="3"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="4"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="5"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="6"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="7"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="8"
+                    Fill="black"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                
+                <!--Activated-->
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Fill="green"
+                    IsVisible="{Binding X0}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Fill="green"
+                    IsVisible="{Binding X1}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="3"
+                    Fill="green"
+                    IsVisible="{Binding X2}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="4"
+                    Fill="green"
+                    IsVisible="{Binding X3}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="5"
+                    Fill="green"
+                    IsVisible="{Binding X4}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="6"
+                    Fill="green"
+                    IsVisible="{Binding X5}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="7"
+                    Fill="green"
+                    IsVisible="{Binding X6}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+                <Ellipse
+                    Grid.Column="2"
+                    Grid.Row="8"
+                    Fill="green"
+                    IsVisible="{Binding X7}"
+                    WidthRequest="30"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"                  
+                    />
+               
+
+
+            </Grid>
 
 
 
