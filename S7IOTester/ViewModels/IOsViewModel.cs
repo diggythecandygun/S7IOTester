@@ -23,6 +23,11 @@ namespace S7IOTester.ViewModels
 
         }
 
+        public void OnAppearing()
+        {
+            LoadSettings();
+        }
+
         public Command Connect { get; }
         public Command Update { get; }
 
