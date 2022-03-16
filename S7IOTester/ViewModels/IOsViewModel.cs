@@ -88,30 +88,14 @@ namespace S7IOTester.ViewModels
                 await Task.Delay(500);
                 byte IOByte = plc.ReadByte(ByteAddress)[0];
 
-                if (IsBitSet(IOByte, 0)) X0 = true;
-                else X0 = false;
-
-                if (IsBitSet(IOByte, 1)) X1 = true;
-                else X1 = false;
-
-                if (IsBitSet(IOByte, 2)) X2 = true;
-                else X2 = false;
-
-                if (IsBitSet(IOByte, 3)) X3 = true;
-                else X3 = false;
-
-                if (IsBitSet(IOByte, 4)) X4 = true;
-                else X4 = false;
-
-                if (IsBitSet(IOByte, 5)) X5 = true;
-                else X5 = false;
-
-                if (IsBitSet(IOByte, 6)) X6 = true;
-                else X6 = false;
-
-                if (IsBitSet(IOByte, 7)) X7 = true;
-                else X7 = false;
-
+                X0 = IsBitSet(IOByte, 0);
+                X1 = IsBitSet(IOByte, 1);
+                X2 = IsBitSet(IOByte, 2);
+                X3 = IsBitSet(IOByte, 3);
+                X4 = IsBitSet(IOByte, 4);
+                X5 = IsBitSet(IOByte, 5);
+                X6 = IsBitSet(IOByte, 6);
+                X7 = IsBitSet(IOByte, 7);
             }
         }
 

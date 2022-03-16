@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace S7IOTester.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class IOs : ContentPage
+    public partial class IOsPage : ContentPage
     {
         IOsViewModel _viewModel;
-        public IOs()
+        public IOsPage()
         {
             InitializeComponent();
             BindingContext = _viewModel = new IOsViewModel();

@@ -43,12 +43,12 @@ namespace S7IOTester.Models
             plc.WriteTimeout = 3000;
         }
 
+
         public CpuType CPUType { get; set; }
         public string IPAddress { get; set; }
         public short Rack { get; set; }
         public short Slot { get; set; }
         private Plc plc { get; set; }
-
 
 
         public short ConnDisconn()
@@ -58,7 +58,7 @@ namespace S7IOTester.Models
                 Disconnect();
                 return 0;
             }
-
+            
             else
             {
                 if (Connect()) return 1;
@@ -79,7 +79,7 @@ namespace S7IOTester.Models
                 else return false;
 
             }
-            catch (PlcException e)
+            catch (PlcException)
             {
                 return false;
             }
@@ -109,7 +109,7 @@ namespace S7IOTester.Models
                 else return false;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -130,10 +130,7 @@ namespace S7IOTester.Models
             catch
             {
                 return ByteRead;
-            }
-
-            
+            }           
         }
-
     }
 }

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace S7IOTester.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingsPage : ContentPage
+    public partial class IOSetPage : ContentPage
     {
-        public SettingsPage()
+        public IOSetPage()
         {
             InitializeComponent();
         }

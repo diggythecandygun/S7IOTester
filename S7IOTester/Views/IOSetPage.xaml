@@ -1,21 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:S7IOTester.ViewModels"
-             x:Class="S7IOTester.Views.SettingsPage"
-             Title="Settings"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="S7IOTester.Views.IOSetPage"
+             Title="IO Definition"
              BackgroundColor="#F3E9DD">
-    
-    <ContentPage.BindingContext>
-        <viewmodels:SettingsViewModel/>
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Content >
+    <ContentPage.Content>
         
         <StackLayout VerticalOptions="Center" >
-            
+
             <StackLayout>
                 <Label 
-                    Text="CPU Family"
+                    Text="Select CPU"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
@@ -23,42 +18,48 @@
                 />
 
                 <Picker 
-                    Title="Select CPU Family"
-                    ItemsSource="{Binding CPUFamily}"
-                    SelectedItem="{Binding CPUType}"
+                    Title="CPU"
                     BackgroundColor="white" 
                     TextColor="Black"
                     HorizontalOptions="Center"
                 />
 
             </StackLayout>
-            
+
             <StackLayout>
                 <Label 
-                    Text="IP Address"
+                    Text="Variable Name"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
                     HorizontalOptions="Center"
                 />
-
                 <Entry 
-                    Placeholder="Set device IP Address"
-                    Text="{Binding IPAddress, Mode=TwoWay}"                  
+                    Placeholder="Set var name"                  
                     BackgroundColor="white" 
                     TextColor="Black" 
-                    HorizontalOptions="CenterAndExpand"
-                    
+                    HorizontalOptions="CenterAndExpand"                  
                 />
-
+                
+                <Label 
+                    Text="Variable Address"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+                <Entry 
+                    Placeholder="Set var address"                  
+                    BackgroundColor="white" 
+                    TextColor="Black" 
+                    HorizontalOptions="CenterAndExpand"                  
+                />
                 <Button 
-                    Text="Save"
-                    Command="{Binding SaveSettings}"
+                    Text="Add"
                     HorizontalOptions="Center"
                 />
             </StackLayout>
-            
+
         </StackLayout>
-        
     </ContentPage.Content>
 </ContentPage>
