@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:S7IOTester.ViewModels"
              x:Class="S7IOTester.Views.IOsPage"
-             Title="IOs"
              BackgroundColor="#F3E9DD">
     
     <ContentPage.BindingContext>
@@ -10,20 +9,40 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        
-        
-        <StackLayout VerticalOptions="Start" >
+
+
+        <StackLayout VerticalOptions="Start">
 
             <Grid
-                Margin="0,30,0,0"
+                Margin="0,0,0,0"
                 ColumnDefinitions="2"
-                RowDefinitions="4">
-                
-                <!--CPU Settings-->
+                RowDefinitions="5">
+
+                <!--CPU Selection-->
                 <Label 
                     Grid.Column="1"
                     Grid.Row="1"
-                    Text="Selected CPU Family:"
+                    Text="Select CPU:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                />
+                <Picker 
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Title="CPUs..."
+                    TextColor="Black"
+                    TitleColor="black"
+                    ItemsSource="{Binding CPUNames}"
+                    SelectedItem="{Binding SelectedCPUName}"
+                />
+
+                <!--CPU Settings-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="CPU Family:"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
@@ -31,18 +50,18 @@
                 />
                 <Label 
                     Grid.Column="2"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Text="{Binding CPUType}"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
                     HorizontalOptions="Center"
                 />
-                
+
                 <!--IP Settings-->
                 <Label 
                     Grid.Column="1"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     HorizontalOptions="Start"
                     Text="IP Address:"
                     FontAttributes="Bold"
@@ -51,18 +70,18 @@
                 />
                 <Label 
                     Grid.Column="2"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Text="{Binding IPAddress}"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
                     HorizontalOptions="Center"
                 />
-                
+
                 <!--Connection Status-->
                 <Label 
                     Grid.Column="1"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     HorizontalOptions="Start"
                     Text="Status"
                     FontAttributes="Bold"
@@ -71,7 +90,7 @@
                 />
                 <Label 
                     Grid.Column="2"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Text="{Binding Status}"
                     FontAttributes="Bold"
                     FontSize="Medium"
@@ -82,7 +101,7 @@
                 <!--Byte Address-->
                 <Label 
                     Grid.Column="1"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     HorizontalOptions="Start"
                     Text="Byte Address"
                     FontAttributes="Bold"
@@ -91,7 +110,7 @@
                 />
                 <Entry 
                     Grid.Column="2"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Placeholder="Byte Address"
                     PlaceholderColor="black"
                     Text="{Binding ByteAddress, Mode=TwoWay}"
@@ -111,9 +130,10 @@
 
             <!--Bits-->
             <Grid
+                VerticalOptions="Start"
+                Margin="0,0,0,0"
                 ColumnDefinitions="2"
                 RowDefinitions="8">
-
 
                 <Label
                     Text="%X0:"
@@ -250,7 +270,7 @@
                     HeightRequest="25"
                     HorizontalOptions="StartAndExpand"                  
                     />
-                
+
                 <Label
                     Text="%X0:"
                     TextColor="Black"
@@ -387,7 +407,7 @@
                     HeightRequest="25"
                     HorizontalOptions="StartAndExpand"                  
                     />
-                
+
                 <!--Activated-->
 
                 <Ellipse
@@ -466,14 +486,8 @@
                     HeightRequest="25"
                     HorizontalOptions="StartAndExpand"                  
                     />
-               
-
-
             </Grid>
-
-
-
-
+            
         </StackLayout>
         
     </ContentPage.Content>

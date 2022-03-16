@@ -5,6 +5,9 @@ using System.Text;
 using System.Windows.Input;
 using MvvmHelpers.Commands;
 using Xamarin.Essentials;
+using Xamarin.Forms;
+using Command = MvvmHelpers.Commands.Command;
+using S7IOTester.Models;
 
 namespace S7IOTester.ViewModels
 {
@@ -26,7 +29,7 @@ namespace S7IOTester.ViewModels
             SaveSettings = new Command(Save);
 
 
-            LoadSettings();
+            //LoadSettings();
 
         }
 
@@ -36,15 +39,31 @@ namespace S7IOTester.ViewModels
         #region Methods
         void LoadSettings()
         {
+            /*
             IPAddress = Preferences.Get("IP", string.Empty);
-            CPUType = Preferences.Get("CPUFamily", string.Empty);
+            CPUType = Preferences.Get("CPUFamily", string.Empty);*/
+
         }
              
         void Save()
         {
-            if (IPAddress != "") Preferences.Set("IP",IPAddress);
-            Preferences.Set("CPUFamily", CPUType);
+            /*if (IPAddress != "") Preferences.Set("IP",IPAddress);
+            Preferences.Set("CPUFamily", CPUType);*/
+
+            DatabaseHandler _db = new DatabaseHandler();
+            var cpu = new CPUs { Family = CPUType, IP = IPAddress, Name = CPUName };
+            try
+            {
+                _db.InsertCPU(cpu);
+                Application.Current.MainPage.DisplayAlert("Info", "CPU succesfully saved", "Ok");
+            }
+            catch (Exception e)
+            {
+                Application.Current.MainPage.DisplayAlert("Info", e.Message, "Ok");
+            }
+
         }
+
         #endregion
 
         #region Properties
@@ -56,12 +75,21 @@ namespace S7IOTester.ViewModels
             get => _IPAdress;
             set => SetProperty(ref _IPAdress, value);
         }
+
         //CPUFamily selected
         string _CPUType = "";
         public string CPUType
         {
             get => _CPUType;
             set => SetProperty(ref _CPUType, value);
+        }
+
+        //CPUFamily selected
+        string _CPUName = "";
+        public string CPUName
+        {
+            get => _CPUName;
+            set => SetProperty(ref _CPUName, value);
         }
 
         #endregion

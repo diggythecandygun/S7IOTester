@@ -9,6 +9,7 @@ namespace S7IOTester.Models
     class S7PLC
     {
 
+
         public S7PLC(string CPUType, string IPAddress)
         {
             if (CPUType == "S7-300")

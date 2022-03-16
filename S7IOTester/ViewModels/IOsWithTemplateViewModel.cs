@@ -12,8 +12,9 @@ using Command = MvvmHelpers.Commands.Command;
 
 namespace S7IOTester.ViewModels
 {
-    class IOsViewModel : ObservableObject
+    class IOsWithTemplateViewModel : ObservableObject
     {
+
         S7PLC plc;
 
         public ObservableRangeCollection<string> CPUNames { get; set; }
@@ -22,7 +23,7 @@ namespace S7IOTester.ViewModels
 
         List<CPUs> CPUList = new List<CPUs>() { };
 
-        public IOsViewModel()
+        public IOsWithTemplateViewModel()
         {
             CPUNames = new ObservableRangeCollection<string>();
             Connect = new Command(CPUConnect);
@@ -44,7 +45,7 @@ namespace S7IOTester.ViewModels
 
         void LoadCPUs()
         {
-            DatabaseHandler _db = new DatabaseHandler();           
+            DatabaseHandler _db = new DatabaseHandler();
             CPUList = _db.SelectCPUs();
 
             CPUNames.Clear();
@@ -79,19 +80,11 @@ namespace S7IOTester.ViewModels
                 Status = "Connected";
                 ConnectButton = "Disconnect";
                 UpdateIO();
-            } 
+            }
             else if (retval == 0)
             {
                 Status = "Disconnected";
                 ConnectButton = "Connect";
-                X0 = false;
-                X1 = false;
-                X2 = false;
-                X3 = false;
-                X4 = false;
-                X5 = false;
-                X6 = false;
-                X7 = false;
             }
 
             else
@@ -111,16 +104,7 @@ namespace S7IOTester.ViewModels
             while (Status == "Connected")
             {
                 await Task.Delay(500);
-                byte IOByte = plc.ReadByte(ByteAddress)[0];
-
-                X0 = IsBitSet(IOByte, 0);
-                X1 = IsBitSet(IOByte, 1);
-                X2 = IsBitSet(IOByte, 2);
-                X3 = IsBitSet(IOByte, 3);
-                X4 = IsBitSet(IOByte, 4);
-                X5 = IsBitSet(IOByte, 5);
-                X6 = IsBitSet(IOByte, 6);
-                X7 = IsBitSet(IOByte, 7);
+                //TODO Read variables list
             }
         }
 
@@ -190,70 +174,6 @@ namespace S7IOTester.ViewModels
         {
             get => _CanConnect;
             set => SetProperty(ref _CanConnect, value);
-        }
-
-        //X0 Status
-        bool _X0 = false;
-        public bool X0
-        {
-            get => _X0;
-            set => SetProperty(ref _X0, value);
-        }
-
-        //X0 Status
-        bool _X1 = false;
-        public bool X1
-        {
-            get => _X1;
-            set => SetProperty(ref _X1, value);
-        }
-
-        //X2 Status
-        bool _X2 = false;
-        public bool X2
-        {
-            get => _X2;
-            set => SetProperty(ref _X2, value);
-        }
-
-        //X3 Status
-        bool _X3 = false;
-        public bool X3
-        {
-            get => _X3;
-            set => SetProperty(ref _X3, value);
-        }
-
-        //X4 Status
-        bool _X4 = false;
-        public bool X4
-        {
-            get => _X4;
-            set => SetProperty(ref _X4, value);
-        }
-
-        //X5 Status
-        bool _X5 = false;
-        public bool X5
-        {
-            get => _X5;
-            set => SetProperty(ref _X5, value);
-        }
-
-        //X6 Status
-        bool _X6 = false;
-        public bool X6
-        {
-            get => _X6;
-            set => SetProperty(ref _X6, value);
-        }
-
-        //X7 Status
-        bool _X7 = false;
-        public bool X7
-        {
-            get => _X7;
-            set => SetProperty(ref _X7, value);
         }
 
         #endregion

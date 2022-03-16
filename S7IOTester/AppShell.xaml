@@ -78,15 +78,30 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="IOs" Icon="icon_about.png">
-        <ShellContent  ContentTemplate="{DataTemplate local:IOsPage}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="IO Definition" Icon="icon_about.png">
-        <ShellContent ContentTemplate="{DataTemplate local:IOSetPage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Settings" Icon="icon_about.png">
-        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
-    </FlyoutItem>
+    <TabBar Title="S7IOTester">
+
+        <Tab Title="IO Status">
+
+            <ShellContent
+                Title="Bits"
+                ContentTemplate="{DataTemplate local:IOsPage}" />
+
+            <ShellContent
+                Title="Templates"
+                ContentTemplate="{DataTemplate local:IOsWithTemplatePage}" />
+            
+        </Tab>
+
+        <ShellContent
+            Title="Template Definition"
+            ContentTemplate="{DataTemplate local:TemplateDefPage}" />
+
+        <ShellContent 
+            Title="CPU Settings"
+            ContentTemplate="{DataTemplate local:SettingsPage}" />
+        
+    </TabBar>
+    
 
 
    

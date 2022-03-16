@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:S7IOTester.ViewModels"
+             x:Class="S7IOTester.Views.IOsWithTemplatePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:IOsWithTemplateViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start">
+            <Grid
+                Margin="0,0,0,0"
+                ColumnDefinitions="2"
+                RowDefinitions="4"
+                VerticalOptions="Start">
+
+                <!--CPU Selection-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Select CPU:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                />
+                <Picker 
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Title="CPUs..."
+                    TextColor="Black"
+                    TitleColor="black"
+                    ItemsSource="{Binding CPUNames}"
+                    SelectedItem="{Binding SelectedCPUName}"
+                />
+
+                <!--CPU Settings-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="CPU Family:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                />
+                <Label 
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Text="{Binding CPUType}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
+                <!--IP Settings-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    HorizontalOptions="Start"
+                    Text="IP Address:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                />
+                <Label 
+                    Grid.Column="2"
+                    Grid.Row="3"
+                    Text="{Binding IPAddress}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+
+                <!--Connection Status-->
+                <Label 
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    HorizontalOptions="Start"
+                    Text="Status"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                />
+                <Label 
+                    Grid.Column="2"
+                    Grid.Row="4"
+                    Text="{Binding Status}"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                />
+            </Grid>
+            
+            <!--Connection Button-->
+            <Button 
+                    Text="{Binding ConnectButton}"
+                    Command="{Binding Connect}"
+                    IsEnabled="{Binding CanConnect}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
