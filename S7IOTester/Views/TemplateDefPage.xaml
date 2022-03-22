@@ -12,58 +12,105 @@
         
         <StackLayout VerticalOptions="Center" >
 
-            <StackLayout>
-                <Label 
+            <Grid RowDefinitions="5" ColumnDefinitions="2">
+                <Label
                     Text="Select CPU"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="1"
+                    Grid.Column="1"
                 />
 
                 <Picker 
                     Title="CPU"
-                    BackgroundColor="white" 
+                    TitleColor="Black"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    ItemsSource="{Binding CPUNames}"
+                    SelectedItem="{Binding SelectedCPUName}"
+                    Grid.Row="1"
+                    Grid.Column="2"
                 />
 
-            </StackLayout>
-
-            <StackLayout>
+                <!--Var name-->
                 <Label 
                     Text="Variable Name"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="2"
+                    Grid.Column="1"
                 />
                 <Entry 
-                    Placeholder="Set var name"                  
-                    BackgroundColor="white" 
+                    Placeholder="Set var name"    
+                    PlaceholderColor="Black"
                     TextColor="Black" 
-                    HorizontalOptions="CenterAndExpand"                  
+                    Grid.Row="2"
+                    Grid.Column="2"
                 />
-                
+
+                <!--Var type-->
+                <Label 
+                    Text="Var type:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                />
+                <Picker 
+                    Title="CPUs..."
+                    TextColor="Black"
+                    TitleColor="black"
+                    ItemsSource="{Binding VarTypes}"
+                    SelectedItem="{Binding SelectedVarType}"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                />
+
+                <!--Var Datatype-->
+                <Label 
+                    Text="Data type:"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                />
+                <Picker 
+                    Title="CPUs..."
+                    TextColor="Black"
+                    TitleColor="black"
+                    ItemsSource="{Binding DataTypes}"
+                    SelectedItem="{Binding SelectedDataType}"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                />
+
+                <!--Var adress-->
                 <Label 
                     Text="Variable Address"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="5"
+                    Grid.Column="1"
                 />
                 <Entry 
-                    Placeholder="Set var address"                  
-                    BackgroundColor="white" 
-                    TextColor="Black" 
-                    HorizontalOptions="CenterAndExpand"                  
+                    Placeholder="Set var address"    
+                    PlaceholderColor="Black"
+                    TextColor="Black"   
+                    Grid.Row="5"
+                    Grid.Column="2"
                 />
-                <Button 
+                
+            </Grid>
+            
+            <Button 
                     Text="Add"
                     HorizontalOptions="Center"
+                    Command="{Binding addTemplate}"
                 />
-            </StackLayout>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

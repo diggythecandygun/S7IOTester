@@ -92,6 +92,14 @@ namespace S7IOTester.ViewModels
             set => SetProperty(ref _CPUName, value);
         }
 
+        //Device IP Address
+        bool _SaveEnable = false;
+        public bool SaveEnable
+        {
+            get => _SaveEnable;
+            set => SetProperty(ref _SaveEnable, value);
+        }
+
         #endregion
 
     }

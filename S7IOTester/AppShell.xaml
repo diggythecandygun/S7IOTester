@@ -92,13 +92,19 @@
             
         </Tab>
 
-        <ShellContent
+        <Tab Title="Settings">
+            
+            <ShellContent 
+            Title="CPU Settings"
+            ContentTemplate="{DataTemplate local:SettingsPage}" />
+
+            <ShellContent
             Title="Template Definition"
             ContentTemplate="{DataTemplate local:TemplateDefPage}" />
 
-        <ShellContent 
-            Title="CPU Settings"
-            ContentTemplate="{DataTemplate local:SettingsPage}" />
+        </Tab>
+
+        
         
     </TabBar>
     

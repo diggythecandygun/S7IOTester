@@ -11,14 +11,16 @@
     <ContentPage.Content >
         
         <StackLayout VerticalOptions="Center" >
+
+            <Grid RowDefinitions="3" ColumnDefinitions="2">
             
-            <StackLayout>
                 <Label 
                     Text="CPU Family"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="1"
+                    Grid.Column="1"
                 />
 
                 <Picker 
@@ -27,18 +29,17 @@
                     SelectedItem="{Binding CPUType}"
                     TitleColor="black"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="1"
+                    Grid.Column="2"
                 />
-
-            </StackLayout>
             
-            <StackLayout>
                 <Label 
                     Text="IP Address"
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="2"
+                    Grid.Column="1"
                 />
 
                 <Entry 
@@ -46,7 +47,8 @@
                     Text="{Binding IPAddress, Mode=TwoWay}"                  
                     TextColor="Black" 
                     PlaceholderColor="black"
-                    HorizontalOptions="CenterAndExpand"
+                    Grid.Row="2"
+                    Grid.Column="2"
                     
                 />
 
@@ -55,7 +57,8 @@
                     FontAttributes="Bold"
                     FontSize="Medium"
                     TextColor="Black"
-                    HorizontalOptions="Center"
+                    Grid.Row="3"
+                    Grid.Column="1"
                 />
 
                 <Entry 
@@ -63,16 +66,18 @@
                     Text="{Binding CPUName, Mode=TwoWay}"                  
                     TextColor="Black" 
                     PlaceholderColor="black"
-                    HorizontalOptions="CenterAndExpand"
+                    Grid.Row="3"
+                    Grid.Column="2"
                     
                 />
-
-                <Button 
-                    Text="Save"
-                    Command="{Binding SaveSettings}"
-                    HorizontalOptions="Center"
-                />
-            </StackLayout>
+            </Grid>
+            
+            <Button 
+                Text="Save"
+                Command="{Binding SaveSettings}"
+                HorizontalOptions="Center"
+            />
+            
             
         </StackLayout>
         
